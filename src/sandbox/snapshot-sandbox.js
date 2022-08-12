@@ -17,9 +17,9 @@ class SnapshotSandBox {
   }
   inactive() {
     for (const prop in window) {
-      if(window[prop] !== this.windowSnapshot[prop]){
-      this.modifyPropsMap[prop] = window[prop]
-      window[prop] = this.windowSnapshot[prop]
+      if (window[prop] !== this.windowSnapshot[prop]) {
+        this.modifyPropsMap[prop] = window[prop]
+        window[prop] = this.windowSnapshot[prop]
       }
     }
   }
