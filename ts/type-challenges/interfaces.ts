@@ -8,5 +8,6 @@ interface Person {
 let tom: Person = {
   name: 'Tom',
   age: 25,
-  gender: 'male'
+  gender: 'male',
+  23: 100
 };
