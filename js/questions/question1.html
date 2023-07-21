@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  (function () {
+    var x = y = 1;
+  })();
+  var z;
+
+  console.log(y); // 1
+  console.log(z); // undefined
+  console.log(x); // Uncaught ReferenceError: x is not defined
+
+  
+
+</script>
+
+<body>
+  <p>
+    这段代码的关键在于：var x = y = 1; 实际上这里是从右往左执行的，首先执行y = 1,
+    因为y没有使用var声明，所以它是一个全局变量，然后第二步是将y赋值给x，讲一个全局变量赋值给了一个局部变量，最终，x是一个局部变量，y是一个全局变量，所以打印x是报错。
+  </p>
+</body>
+
+</html>

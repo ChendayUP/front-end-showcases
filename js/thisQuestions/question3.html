@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+var a = 10
+var obj = {
+  a: 20,
+  say: () => {
+    console.log(this.a)
+  }
+}
+obj.say() 
+
+var anotherObj = { a: 30 } 
+obj.say.apply(anotherObj) 
+
+</script>
+
+<body>
+  <p>
+    this 定义时指向外层执行环境
+  </p>
+  <p>
+    箭头函数不能改变this指向
+  </p>
+</body>
+
+</html>

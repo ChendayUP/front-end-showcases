@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  function foo() {
+    var b = 3
+    console.log('foo ',this.a);
+    console.log(this.b);
+  }
+
+  function doFoo() {
+    foo();
+    console.log('doFoo ',this.a);
+  }
+
+  var obj = {
+    a: 1,
+    doFoo: doFoo
+  };
+
+  var a = 2;
+  obj.doFoo()
+
+</script>
+
+<body>
+ <p>
+  在Javascript中，this指向函数执行时的当前对象。在执行foo的时候，执行环境就是doFoo函数，执行环境为全局。所以，foo中的this是指向window的，所以会打印出2。
+ </p>
+</body>
+
+</html>

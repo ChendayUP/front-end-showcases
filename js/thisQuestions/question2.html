@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  var o = {
+    f: function () {
+      return this.a + this.b;
+    }
+  };
+  var p = Object.create(o);
+  p.a = 1;
+  p.b = 4;
+
+  console.log(p.f()); // 5
+
+
+  let arr = Array.from(document.getElementsByClassName('img-hover')).map(
+    res => {
+      if (res.src && res.src.includes('http')) {
+        return res.src
+      }
+    })
+</script>
+
+<body>
+  <p>
+    原型链中的方法的this仍然指向调用它的对象
+  </p>
+  <p>
+    以上代码，可以看出， 在p中没有属性f，当执行p.f()时，会查找p的原型链，找到 f 函数并执行，但这与函数内部this指向对象 p 没有任何关系，只需记住谁调用指向谁。
+  </p>
+</body>
+
+</html>

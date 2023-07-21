@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script>
+  var obj = {
+    say: function () {
+      var f1 = () => {
+        console.log("1111", this);
+      }
+      f1();
+    },
+    pro: {
+      getPro: () => {
+        console.log(this);
+      }
+    }
+  }
+  var o = obj.say;
+  o();
+  obj.say();
+  obj.pro.getPro();
+
+</script>
+
+<body>
+  <p>
+    o()，o是在全局执行的，而f1是箭头函数，它是没有绑定this的，它的this指向其父级的this，其父级say方法的this指向的是全局作用域，所以会打印出window；
+    obj.say()，谁调用say，say 的this就指向谁，所以此时this指向的是obj对象；
+    obj.pro.getPro()，我们知道，箭头函数时不绑定this的，getPro处于pro中，而对象不构成单独的作用域，所以箭头的函数的this就指向了全局作用域window。
+  </p>
+</body>
+
+</html>
