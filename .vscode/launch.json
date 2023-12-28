@@ -10,7 +10,7 @@
         "ts-node/register"
       ],
       "args": [
-        "${workspaceFolder}/src/tuple.ts"
+        "${workspaceFolder}/*.ts"
       ],
       "runtimeExecutable": "/usr/local/bin/node"
     }
